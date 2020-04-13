@@ -5,7 +5,7 @@ const Book = (props) => {
     const { book } = props;
     return (
         <div>
-            <p>{book}</p>
+            <p>{book.map(book => book.item)}</p>
         </div>
     )
 }
