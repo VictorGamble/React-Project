@@ -62,7 +62,7 @@ class BookList extends Component{
                         <br/>
                         <button type="submit">Search Author</button>
                     </form>
-                    <Book data={data.items.map(item =  )} />
+                    {data.map(book => <Book data={book} />)}
                 </div>
         )
                 
