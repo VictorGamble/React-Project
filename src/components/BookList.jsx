@@ -46,6 +46,7 @@ class BookList extends Component{
 
     render() {
         const { input, data, isLoaded } = this.state;
+        const bookData = data.items;
         return (
             (isLoaded === false) ?
                 <div>
@@ -56,13 +57,14 @@ class BookList extends Component{
                     </form>
                     
                 </div>
-                : <div>
+                :
+                <div>
                       <form onSubmit={this.submitHandler}>
                         <input type="text" value={input} onChange={this.changeHandler}></input>
                         <br/>
                         <button type="submit">Search Author</button>
                     </form>
-                    {data.map(book => <Book data={book} />)}
+                    {bookData.map((book, index) => <Book data={book} key={index} />)}
                 </div>
         )
                 
