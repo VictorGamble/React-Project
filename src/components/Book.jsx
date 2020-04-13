@@ -2,10 +2,14 @@ import React from 'react';
 
 const Book = (props) => {
     console.log("props =>", props);
-    const { book } = props;
+    const { book } = props.data;
     return (
         <div>
-            <p>{book}</p>
+            <ul>
+                <li>{book}</li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
     )
 }
