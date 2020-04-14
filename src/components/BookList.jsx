@@ -29,10 +29,9 @@ class BookList extends Component{
     submitHandler = async (event) => {
         event.preventDefault()
         try {
-            const { input } = this.state;
+            const { input, } = this.state;
             let url = `https://www.googleapis.com/books/v1/volumes?q=${input}`;
             const data = await this.LoadData(url);
-            console.log("Data =>", data);
             this.setState({
                 input: '',
                 data,
@@ -47,6 +46,7 @@ class BookList extends Component{
 
     render() {
         const { input, data, isLoaded } = this.state;
+        const bookData = data.items;
         return (
             (isLoaded === false) ?
                 <div>
@@ -57,13 +57,19 @@ class BookList extends Component{
                     </form>
                     
                 </div>
-                : <div>
-                    <Book data={data.map(book => book.items)} />
+                :
+                <div>
+                      <form onSubmit={this.submitHandler}>
+                        <input type="text" value={input} onChange={this.changeHandler}></input>
+                        <br/>
+                        <button type="submit">Search Author</button>
+                    </form>
+                    {bookData.map((book, index) => <Book data={book} key={index} />)}
                 </div>
         )
                 
     }
-
 }
+
 
 export default BookList;
