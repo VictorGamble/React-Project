@@ -59,16 +59,18 @@ class BookList extends Component{
                     </form> 
                 </Container>
                 :
-                <div>
-                     <form onSubmit={this.submitHandler}>
+             <div>
+                <Container>
+                    <form onSubmit={this.submitHandler}>
                         <input type="text" value={input} onChange={this.changeHandler}></input>
                         <br/>
                         <button type="submit">Search Author</button>
                     </form>
+                    </Container>
                 <Container>
                     {bookData.map((book, index) => <Book data={book} key={index} />)}
                 </Container>
-                </div>
+             </div>
         )
                 
     }
