@@ -12,4 +12,5 @@ color: white;
 font-weight: bolder;
 `
 
+
 export default Card;
