@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import Container from './Container';
 import Book from './Book';
 
 class BookList extends Component{
@@ -49,22 +51,23 @@ class BookList extends Component{
         const bookData = data.items;
         return (
             (isLoaded === false) ?
-                <div>
+                <Container>
                     <form onSubmit={this.submitHandler}>
                         <input type="text" value={input} onChange={this.changeHandler}></input>
                         <br/>
                         <button type="submit">Search Author</button>
-                    </form>
-                    
-                </div>
+                    </form> 
+                </Container>
                 :
                 <div>
-                      <form onSubmit={this.submitHandler}>
+                     <form onSubmit={this.submitHandler}>
                         <input type="text" value={input} onChange={this.changeHandler}></input>
                         <br/>
                         <button type="submit">Search Author</button>
                     </form>
+                <Container>
                     {bookData.map((book, index) => <Book data={book} key={index} />)}
+                </Container>
                 </div>
         )
                 
