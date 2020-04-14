@@ -1,15 +1,19 @@
 import React from 'react';
+import Card from './StyleBook';
+
 
 const Book = (props) => {
-    console.log("props =>", props);
-    const { book } = props.data;
+    const book = props.data;
+    console.log("books =>", book)
     return (
         <div>
-            <ul>
-                <li>{book}</li>
-                <li></li>
-                <li></li>
-            </ul>
+            <Card>
+                <p>Title: {book.volumeInfo.title}</p> 
+                <p>Written by: {book.volumeInfo.authors}</p>
+                <p>Publish date:{book.volumeInfo.publishedDate}</p>
+                <p>Short Preview:<br/> {book.searchInfo.textSnippet}</p>
+                <button><a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">Click to preview this book</a></button>
+            </Card>
         </div>
     )
 }
