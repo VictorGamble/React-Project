@@ -3,11 +3,6 @@ body{
 }
 
 
-.jumbotron{
-       background-image: url(https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&w=1000&q=80);
-       background-repeat: no-repeat;
-}
-
 button{
  border-radius: 20px; 
   color: black;
@@ -23,5 +18,9 @@ label{
 
 button:hover{
     background-color: green;
+}
+
+hr{
+    border: 1px solid red;
 }
 
