@@ -4,7 +4,8 @@ import Container from './Container';
 
 
 class SignUp extends Component{
-    state= {
+    state = {
+        userName: '',
         firstName: '',
         lastName: '',
         email: '',
@@ -19,16 +20,21 @@ class SignUp extends Component{
         return (
             <div>
                 <Container>
-                <form>
-                    <label>First Name: <input type="text" name="firstName" /></label>
+                 <form>
+                    <br />
+                    <label>First Name: <input type="text" name="userName" /></label>
                     <br />
                     <label>Last Name: <input type="text" name="lastName" /></label>
-                    <br />
-                    <label>Email: <input type="text" name="email" /></label>
+                      <br />
+                    <label>User Name: <input type="text" name="firstName" /></label>
+                      <br />  
+                    <label> Email:  <input type="text" name="email" /></label>
                     <br />
                     <label>Password: <input type="text" name="password" /></label>
                     <br />
-                    <button>Submit</button>
+                    <Container>   
+                        <button>Submit</button>
+                    </Container> 
                 </form>
               </Container>
             </div>
